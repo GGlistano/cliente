@@ -25,20 +25,20 @@ const lessons = [
   {
     id: 4,
     title: 'Aula 4',
-    playerId: 'vid-690e06e7230c7d2caf61da1d',
-    scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/690e06e7230c7d2caf61da1d/v4/player.js',
+    playerId: 'vid-690de30c19eaa3a949e81de4',
+    scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/690de30c19eaa3a949e81de4/v4/player.js',
   },
   {
     id: 5,
     title: 'Aula 5',
-    playerId: 'vid-690e071e3ad3bcc011d8e45e',
-    scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/690e071e3ad3bcc011d8e45e/v4/player.js',
+    playerId: 'vid-690e06e7230c7d2caf61da1d',
+    scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/690e06e7230c7d2caf61da1d/v4/player.js',
   },
   {
     id: 6,
     title: 'Aula 6',
-    playerId: 'vid-690de30c19eaa3a949e81de4',
-    scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/690de30c19eaa3a949e81de4/v4/player.js',
+    playerId: 'vid-690e071e3ad3bcc011d8e45e',
+    scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/690e071e3ad3bcc011d8e45e/v4/player.js',
   },
 ];
 
