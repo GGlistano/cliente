@@ -1,45 +1,86 @@
 import { useState, useEffect } from 'react';
-import { Play, Download, MessageCircle, CheckCircle } from 'lucide-react';
+import { Play, Download, MessageCircle, CheckCircle, BookOpen } from 'lucide-react';
 import VideoLesson from './VideoLesson';
 
-const lessons = [
+interface Lesson {
+  id: number;
+  title: string;
+  playerId: string;
+  scriptSrc: string;
+  module: number;
+  thumbnail?: string;
+}
+
+const lessons: Lesson[] = [
   {
     id: 1,
     title: 'Aula 1',
-    playerId: 'vid-690e0b5397f939cb40d39a6f',
-    scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/690e0b5397f939cb40d39a6f/v4/player.js',
+    playerId: 'vid-69b1ace93e201d76893d875d',
+    scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/69b1ace93e201d76893d875d/v4/player.js',
+    module: 1,
   },
   {
     id: 2,
     title: 'Aula 2',
-    playerId: 'vid-690de20c19eaa3a949e81cdc',
-    scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/690de20c19eaa3a949e81cdc/v4/player.js',
+    playerId: 'vid-69b1ac25011455be91e418aa',
+    scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/69b1ac25011455be91e418aa/v4/player.js',
+    module: 1,
   },
   {
     id: 3,
     title: 'Aula 3',
-    playerId: 'vid_690de3c67ee544f7b996720d',
-    scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/690de3c67ee544f7b996720d/player.js',
-    thumbnail: 'https://images.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/690de3c67ee544f7b996720d/thumbnail.jpg',
+    playerId: 'vid-69b1acb04e2d745440682f94',
+    scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/69b1acb04e2d745440682f94/v4/player.js',
+    module: 1,
   },
   {
     id: 4,
-    title: 'Aula 4',
-    playerId: 'vid-690de30c19eaa3a949e81de4',
-    scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/690de30c19eaa3a949e81de4/v4/player.js',
+    title: 'Aula 1',
+    playerId: 'vid-690e0b5397f939cb40d39a6f',
+    scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/690e0b5397f939cb40d39a6f/v4/player.js',
+    module: 2,
   },
   {
     id: 5,
-    title: 'Aula 5',
-    playerId: 'vid-690e06e7230c7d2caf61da1d',
-    scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/690e06e7230c7d2caf61da1d/v4/player.js',
+    title: 'Aula 2',
+    playerId: 'vid-690de20c19eaa3a949e81cdc',
+    scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/690de20c19eaa3a949e81cdc/v4/player.js',
+    module: 2,
   },
   {
     id: 6,
+    title: 'Aula 3',
+    playerId: 'vid_690de3c67ee544f7b996720d',
+    scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/690de3c67ee544f7b996720d/player.js',
+    thumbnail: 'https://images.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/690de3c67ee544f7b996720d/thumbnail.jpg',
+    module: 2,
+  },
+  {
+    id: 7,
+    title: 'Aula 4',
+    playerId: 'vid-690de30c19eaa3a949e81de4',
+    scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/690de30c19eaa3a949e81de4/v4/player.js',
+    module: 2,
+  },
+  {
+    id: 8,
+    title: 'Aula 5',
+    playerId: 'vid-690e06e7230c7d2caf61da1d',
+    scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/690e06e7230c7d2caf61da1d/v4/player.js',
+    module: 2,
+  },
+  {
+    id: 9,
     title: 'Aula 6',
     playerId: 'vid-690e071e3ad3bcc011d8e45e',
     scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/690e071e3ad3bcc011d8e45e/v4/player.js',
+    module: 2,
   },
+];
+
+const modules = [
+  { id: 1, title: 'Módulo 1' },
+  { id: 2, title: 'Módulo 2' },
 ];
 
 export default function MembersArea() {
@@ -114,48 +155,59 @@ export default function MembersArea() {
         <div className="lg:col-span-1">
           <div className="bg-white rounded-xl shadow-lg p-6 border border-slate-200 sticky top-8">
             <h3 className="text-xl font-bold text-slate-800 mb-4">Módulos do Curso</h3>
-            <div className="space-y-2">
-              {lessons.map((lesson) => (
-                <button
-                  key={lesson.id}
-                  onClick={() => setSelectedLesson(lesson)}
-                  className={`w-full text-left p-4 rounded-lg transition-all duration-200 border-2 ${
-                    selectedLesson.id === lesson.id
-                      ? 'bg-blue-50 border-blue-500 shadow-sm'
-                      : 'bg-slate-50 border-slate-200 hover:bg-slate-100'
-                  }`}
-                >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className={`flex items-center justify-center w-10 h-10 rounded-full ${
-                        selectedLesson.id === lesson.id ? 'bg-blue-500' : 'bg-slate-300'
-                      }`}>
-                        <Play className={`w-5 h-5 ${
-                          selectedLesson.id === lesson.id ? 'text-white' : 'text-slate-600'
-                        }`} />
-                      </div>
-                      <span className={`font-semibold ${
-                        selectedLesson.id === lesson.id ? 'text-blue-700' : 'text-slate-700'
-                      }`}>
-                        {lesson.title}
-                      </span>
+            <div className="space-y-4">
+              {modules.map((module) => {
+                const moduleLessons = lessons.filter(l => l.module === module.id);
+                return (
+                  <div key={module.id} className="space-y-2">
+                    <div className="flex items-center gap-2 px-2 py-1">
+                      <BookOpen className="w-5 h-5 text-blue-600" />
+                      <h4 className="font-bold text-slate-800">{module.title}</h4>
                     </div>
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        toggleLessonComplete(lesson.id);
-                      }}
-                      className={`p-1 rounded-full transition-colors ${
-                        completedLessons.includes(lesson.id)
-                          ? 'text-green-600'
-                          : 'text-slate-300 hover:text-slate-500'
-                      }`}
-                    >
-                      <CheckCircle className="w-6 h-6" />
-                    </button>
+                    {moduleLessons.map((lesson) => (
+                      <button
+                        key={lesson.id}
+                        onClick={() => setSelectedLesson(lesson)}
+                        className={`w-full text-left p-4 rounded-lg transition-all duration-200 border-2 ${
+                          selectedLesson.id === lesson.id
+                            ? 'bg-blue-50 border-blue-500 shadow-sm'
+                            : 'bg-slate-50 border-slate-200 hover:bg-slate-100'
+                        }`}
+                      >
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-3">
+                            <div className={`flex items-center justify-center w-10 h-10 rounded-full ${
+                              selectedLesson.id === lesson.id ? 'bg-blue-500' : 'bg-slate-300'
+                            }`}>
+                              <Play className={`w-5 h-5 ${
+                                selectedLesson.id === lesson.id ? 'text-white' : 'text-slate-600'
+                              }`} />
+                            </div>
+                            <span className={`font-semibold ${
+                              selectedLesson.id === lesson.id ? 'text-blue-700' : 'text-slate-700'
+                            }`}>
+                              {lesson.title}
+                            </span>
+                          </div>
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              toggleLessonComplete(lesson.id);
+                            }}
+                            className={`p-1 rounded-full transition-colors ${
+                              completedLessons.includes(lesson.id)
+                                ? 'text-green-600'
+                                : 'text-slate-300 hover:text-slate-500'
+                            }`}
+                          >
+                            <CheckCircle className="w-6 h-6" />
+                          </button>
+                        </div>
+                      </button>
+                    ))}
                   </div>
-                </button>
-              ))}
+                );
+              })}
             </div>
             <div className="mt-6 pt-6 border-t border-slate-200">
               <div className="text-center">
