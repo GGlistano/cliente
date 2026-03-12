@@ -22,6 +22,14 @@ interface Module {
 const lessons: Lesson[] = [
   {
     id: 1,
+    title: 'Introdução',
+    playerId: 'vid-69b252bffaf9397e232f529a',
+    scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/69b252bffaf9397e232f529a/v4/player.js',
+    module: 1,
+    description: 'Introdução ao curso',
+  },
+  {
+    id: 2,
     title: 'Criar Conta',
     playerId: 'vid-69b1ace93e201d76893d875d',
     scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/69b1ace93e201d76893d875d/v4/player.js',
@@ -29,7 +37,7 @@ const lessons: Lesson[] = [
     description: 'Como criar sua conta na plataforma',
   },
   {
-    id: 2,
+    id: 3,
     title: 'Responder Pesquisas',
     playerId: 'vid-69b1ac25011455be91e418aa',
     scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/69b1ac25011455be91e418aa/v4/player.js',
@@ -37,7 +45,7 @@ const lessons: Lesson[] = [
     description: 'Aprenda a responder pesquisas corretamente',
   },
   {
-    id: 3,
+    id: 4,
     title: 'Como Fazer Saque',
     playerId: 'vid-69b1acb04e2d745440682f94',
     scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/69b1acb04e2d745440682f94/v4/player.js',
@@ -45,7 +53,7 @@ const lessons: Lesson[] = [
     description: 'Passo a passo para realizar saques',
   },
   {
-    id: 4,
+    id: 5,
     title: 'Abrir Conta no PayPal',
     playerId: 'vid-690e06e7230c7d2caf61da1d',
     scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/690e06e7230c7d2caf61da1d/v4/player.js',
@@ -53,7 +61,7 @@ const lessons: Lesson[] = [
     description: 'Como criar sua conta no PayPal',
   },
   {
-    id: 5,
+    id: 6,
     title: 'Como Sacar do PayPal para Mpesa',
     playerId: 'vid-69b24d3d6b51229fda24cb14',
     scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/69b24d3d6b51229fda24cb14/v4/player.js',
@@ -61,7 +69,7 @@ const lessons: Lesson[] = [
     description: 'Transferindo do PayPal para Mpesa',
   },
   {
-    id: 6,
+    id: 7,
     title: 'Aula 1',
     playerId: 'vid-690e0b5397f939cb40d39a6f',
     scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/690e0b5397f939cb40d39a6f/v4/player.js',
@@ -69,7 +77,7 @@ const lessons: Lesson[] = [
     description: 'Técnicas avançadas',
   },
   {
-    id: 7,
+    id: 8,
     title: 'Aula 2',
     playerId: 'vid-690de20c19eaa3a949e81cdc',
     scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/690de20c19eaa3a949e81cdc/v4/player.js',
@@ -77,7 +85,7 @@ const lessons: Lesson[] = [
     description: 'Estratégias de implementação',
   },
   {
-    id: 8,
+    id: 9,
     title: 'Aula 3',
     playerId: 'vid_690de3c67ee544f7b996720d',
     scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/690de3c67ee544f7b996720d/player.js',
@@ -86,7 +94,7 @@ const lessons: Lesson[] = [
     description: 'Otimização e resultados',
   },
   {
-    id: 9,
+    id: 10,
     title: 'Aula 4',
     playerId: 'vid-690de30c19eaa3a949e81de4',
     scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/690de30c19eaa3a949e81de4/v4/player.js',
