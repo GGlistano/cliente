@@ -54,11 +54,11 @@ const lessons: Lesson[] = [
   },
   {
     id: 5,
-    title: 'Como Sacar do PayPal para Moeda',
-    playerId: 'vid-690e071e3ad3bcc011d8e45e',
-    scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/690e071e3ad3bcc011d8e45e/v4/player.js',
+    title: 'Como Sacar do PayPal para Mpesa',
+    playerId: 'vid-69b24d3d6b51229fda24cb14',
+    scriptSrc: 'https://scripts.converteai.net/9d93e4b2-3654-4bea-bda0-107c1328d520/players/69b24d3d6b51229fda24cb14/v4/player.js',
     module: 1,
-    description: 'Transferindo do PayPal para sua conta',
+    description: 'Transferindo do PayPal para Mpesa',
   },
   {
     id: 6,
@@ -187,49 +187,32 @@ export default function MembersArea() {
                 </div>
 
                 {selectedLesson.module === 1 && (
-                  <div className="bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl shadow-xl p-8 text-white">
-                    <h3 className="text-2xl font-bold mb-3 flex items-center gap-2">
-                      <MessageCircle className="w-6 h-6" />
-                      Junte-se à Comunidade
-                    </h3>
-                    <p className="mb-6 text-emerald-50">
-                      Conecte-se com outros alunos, tire dúvidas e compartilhe sua evolução no grupo exclusivo do WhatsApp!
-                    </p>
+                  <div className="bg-white rounded-2xl shadow-xl p-8 border border-slate-200">
+                    <h3 className="text-2xl font-bold text-slate-800 mb-6">Links Úteis</h3>
                     <a
-                      href="https://chat.whatsapp.com/ERG5u5MOfOJLpLD9qq955Q?mode=wwt"
+                      href="https://make-money.rocks/mm/eab836925681af00"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-3 bg-white text-emerald-600 font-bold py-4 px-8 rounded-xl transition-all duration-200 hover:shadow-2xl hover:scale-105"
+                      className="flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
                     >
-                      <MessageCircle className="w-5 h-5" />
-                      Entrar no Grupo WhatsApp
+                      <Download className="w-5 h-5" />
+                      Baixar Aplicativo
                     </a>
                   </div>
                 )}
 
                 {selectedLesson.module === 2 && (
                   <div className="bg-white rounded-2xl shadow-xl p-8 border border-slate-200">
-                    <h3 className="text-2xl font-bold text-slate-800 mb-6">Links Importantes</h3>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <a
-                        href="https://play.google.com/store/apps/details?id=us.current.android"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-3 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
-                      >
-                        <Download className="w-5 h-5" />
-                        Baixar Aplicativo
-                      </a>
-                      <a
-                        href="https://chat.whatsapp.com/ERG5u5MOfOJLpLD9qq955Q?mode=wwt"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-3 bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
-                      >
-                        <MessageCircle className="w-5 h-5" />
-                        Grupo WhatsApp
-                      </a>
-                    </div>
+                    <h3 className="text-2xl font-bold text-slate-800 mb-6">Links Úteis</h3>
+                    <a
+                      href="https://play.google.com/store/apps/details?id=us.current.android"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105"
+                    >
+                      <Download className="w-5 h-5" />
+                      Baixar Aplicativo
+                    </a>
                   </div>
                 )}
               </>
